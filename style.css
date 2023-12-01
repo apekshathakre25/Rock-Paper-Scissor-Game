@@ -1,0 +1,445 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Barlow", sans-serif;
+    background: #8cc461;
+  }
+  
+  .game-container {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background: rgb(140, 196, 97);
+  }
+  
+  .upper-section {
+    display: flex;
+    width: 80%;
+    border: 2px solid white;
+    border-radius: 1rem;
+    height: 18%;
+    justify-content: space-between;
+    margin-top: 4rem;
+    align-items: center;
+    padding: 2rem;
+    background: rgba(28, 48, 120, 0);
+  }
+  
+  .game-title {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  
+  .score-board {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .score-board .computerScore,
+  .userScore {
+    width: 8rem;
+    height: 7rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .score-board p {
+    color: #656565;
+    font-size: 1.0625rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.10625rem;
+  }
+  
+  .score-board h1 {
+    color: #252525;
+    font-size: 2.3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  
+  .choose-one {
+    background-image: url("images/traingle.png");
+    background-repeat: no-repeat;
+    width: 42rem;
+    height: 28rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-position: center;
+    margin-top: 2rem;
+  }
+  
+  .rock {
+    margin-right: 4rem;
+  }
+  
+  .scissor {
+    margin-left: 4rem;
+  }
+  
+  .paper {
+    margin-top: 4rem;
+  }
+  
+  .choose-one {
+    cursor: pointer;
+  }
+  
+  .choose-one img {
+    width: 12rem;
+  }
+  
+  .choose-one img:hover {
+    transform: translate3d(0px, -9px, 0px);
+  }
+  
+  .rules-container {
+    z-index: 2;
+    display: flex;
+    margin-top: 18rem;
+    justify-content: flex-end;
+    position: fixed;
+    padding-right: 2rem;
+    align-self: end;
+    align-content: end;
+    width: fit-content;
+  }
+  
+  #user-hand {
+    position: fixed;
+    left: 18rem;
+    z-index: 2;
+  }
+  
+  #user-image {
+    z-index: 2;
+  }
+  
+  .rules-container h1 {
+    padding-bottom: 1.5rem;
+    color: #fff;
+    font-size: 1.5125rem;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  .rules-page {
+    padding-top: 1rem;
+    padding-left: 0.5rem;
+    border-radius: 13px;
+    border: 7px solid #fff;
+    background: #004429;
+    width: 18.375rem;
+    height: 22.3125rem;
+    margin-right: 1rem;
+    position: fixed;
+    bottom: 5rem;
+    cursor: pointer;
+  }
+  
+  .rules {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .rules-button {
+    width: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.625rem;
+    border: 2px solid #fff;
+    height: 2rem;
+    color: #fff;
+    font-size: 1rem;
+    letter-spacing: 0.13125rem;
+  }
+  
+  .rulebox {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-right: 2rem;
+    width: 100vw;
+    align-items: center;
+    position: fixed;
+    bottom: 2rem;
+  }
+  
+  .rulebutton:hover {
+    background-color: rgb(177, 207, 44);
+  }
+  
+  li {
+    color: #fff;
+    padding: 0.5rem;
+    font-size: 0.9125rem;
+  }
+  
+  .close-button {
+    background: transparent;
+    display: flex;
+    border-color: transparent;
+    position: absolute;
+    border-radius: 50%;
+    transition: all 0.15s;
+    z-index: 4;
+    top: -2rem;
+    left: 16rem;
+  }
+  
+  .close-button>img {
+    width: 43px;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  li::before {
+    /* content: "\25A0"; */
+    color: #ffd600;
+    font-size: 1.3em;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.5em;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+  }
+  
+  .next-button {
+    width: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.625rem;
+    border: 2px solid #fff;
+    height: 2rem;
+    color: #fff;
+    font-size: 1rem;
+    letter-spacing: 0.13125rem;
+  }
+  
+  #result-container {
+    width: 75%;
+    margin-top: 5rem;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    position: fixed;
+    top: 21rem;
+    justify-content: space-around;
+  }
+  
+  #result-container h1 {
+    color: #fff;
+    font-size: 1.3625rem;
+    letter-spacing: 0.10625rem;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hand-image {
+    display: flex;
+    justify-content: center;
+    height: 10rem;
+    width: 10rem;
+  }
+  
+  #win-result-box {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+    position: fixed;
+    top: 24rem;
+    display: flex;
+  }
+  
+  #win-result-box h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 2.4375rem;
+    font-style: normal;
+    letter-spacing: 0.24375rem;
+    margin-bottom: 0%;
+  }
+  
+  #win-result-box p {
+    text-align: center;
+    color: #fff;
+    font-size: 1.5625rem;
+    letter-spacing: 0.15625rem;
+  }
+  
+  #new-game {
+    background-color: #fff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #424141;
+    font-size: 0.9375rem;
+    letter-spacing: 0.09375rem;
+    transition: all 0.15s;
+    width: fit-content;
+    text-align: center;
+    margin-left: 0rem;
+    margin-top: 2.5rem;
+  }
+  
+  #new-game:hover {
+    background-color: #bcb7f6;
+    transform: translate3d(0px, -2.5px, 0px);
+  }
+  
+  #pc-image {
+    display: none;
+    z-index: 2;
+  }
+  
+  #pc-hand {
+    position: absolute;
+    right: 7rem;
+  }
+  
+  .cupsection {
+    position: absolute;
+    width: 100%;
+    height: 52vh;
+    left: 0;
+    background-image: url("images/stars.svg");
+    margin-top: 8rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    background-size: auto;
+    top: -5rem;
+  }
+  
+  .stars {
+    position: absolute;
+    display: block;
+    left: 51%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .cup {
+    top: 30.61%;
+    bottom: 47.15%;
+    width: inherit;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: absolute;
+    height: 30vh;
+  }
+  
+  .summarysection {
+    display: flex;
+    flex-direction: column;
+    top: 25rem;
+    align-items: center;
+    position: relative;
+  }
+  
+  .summarysection h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 4.2875rem;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.26875rem;
+  }
+  
+  .summarysection p {
+    color: #fff;
+    text-align: center;
+    font-size: 2.3625rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.15625rem;
+    margin-top: 0.5rem;
+  }
+  
+  .summarysection>div {
+    margin-top: 4rem;
+  }
+  
+  #startAgain {
+    background-color: #fff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #424141;
+    font-size: 0.9375rem;
+    letter-spacing: 0.09375rem;
+    transition: all 0.15s;
+    width: fit-content;
+    text-align: center;
+    margin-left: 0rem;
+    margin-top: 3rem;
+  }
+  
+  .circle1,
+  .circle4 {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(17, 174, 3, 0.45);
+    position: absolute;
+    top: 5rem;
+    left: -9px;
+  }
+  
+  .circle2,
+  .circle5 {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: rgba(17, 174, 3, 0.45);
+    position: absolute;
+    top: 3.8rem;
+    left: -1.7rem;
+  }
+  
+  .circle3,
+  .circle6 {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: rgba(17, 174, 3, 0.45);
+    position: absolute;
+    right: -3.3rem;
+    top: 2.6rem;
+  }
+  
+  .container {
+    display: none;
+  }

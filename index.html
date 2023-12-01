@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GAME-ROCK PAPER SCISSORS</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="game-container">
+        <div class="upper-section">
+            <div class="game-title">
+                <p>ROCK</p>
+                <p>PAPER</p>
+                <p>SCISSORS</p>
+            </div>
+            <div class="score-board">
+                <div class="computerScore">
+                    <p>COMPUTER</p>
+                    <p>SCORE</p>
+                    <h1 id="computerScore">0</h1>
+                </div>
+                <div class="userScore">
+                    <p>YOUR</p>
+                    <p>SCORE</p>
+                    <h1 id="userScore">0</h1>
+                </div>
+            </div>
+        </div>
+        <div class="choose-one">
+            <div class="rock">
+                <img src="images/rock.png" alt="Rock" />
+            </div>
+            <div class="scissor">
+                <img src="images/scissor.png" alt="Scissor" />
+            </div>
+            <div class="paper">
+                <img src="images/paper.png" alt="Paper" />
+            </div>
+        </div>
+        <div id="result-container">
+            <div id="user-hand">
+                <h1>YOU PICKED</h1>
+                <div class="hand-image">
+                    <div class="user-winner">
+                        <div class="circle1"></div>
+                        <div class="circle2"></div>
+                        <div class="circle3"></div>
+                    </div>
+                    <img id="user-image" src="images/paper.png" alt="" />
+                </div>
+            </div>
+            <div id="win-result-box">
+                <div>
+                    <h1 id="win-result">YOU WIN</h1>
+                </div>
+                <p>AGAINST PC</p>
+                <div id="new-game">PLAY AGAIN</div>
+            </div>
+            <div id="pc-hand">
+                <h1>PC PICKED</h1>
+                <div class="hand-image">
+                    <div class="pc-winner">
+                        <div class="circle4"></div>
+                        <div class="circle5"></div>
+                        <div class="circle6"></div>
+                    </div>
+                    <img id="pc-image" src="images/scissor.png" alt="" />
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="cupsection">
+                <div class="stars"></div>
+                <div class="cup">
+                    <img src="images/wincup.svg" alt="" />
+                </div>
+            </div>
+            <div class="summarysection">
+                <h1>HURRAY!!</h1>
+                <p>YOU WON THE GAME</p>
+                <div id="startAgain">PLAY AGAIN</div>
+            </div>
+        </div>
+
+        <div class="rules-container">
+            <div class="rules-page">
+                <h1>Game Rules</h1>
+                <div class="rules">
+                    <ul>
+                        <li>
+                            Rock beats scissors, scissors beat paper, and paper beats rock.
+                        </li>
+                        <li>
+                            Agree ahead of time whether you'll count off “rock, paper,
+                            scissors, shoot” or just “rock, paper, scissors.”
+                        </li>
+                        <li>
+                            Use rock, paper, scissors to settle minor decisions or simply
+                            play to pass the time.
+                        </li>
+                        <li>
+                            If both players lay down the same hand, each player lays down
+                            another hand.
+                        </li>
+                    </ul>
+                </div>
+                <button class="close-button">
+                    <img src="images/cross.png" />
+                </button>
+            </div>
+        </div>
+        <div class="rulebox">
+            <div class="rules-button">RULES</div>
+            <div class="next-button">NEXT</div>
+        </div>
+    </div>
+</body>
+<script src="script.js" defer></script>
+
+</html>
